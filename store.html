@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LH Store</title>
+  <link rel="stylesheet" href="store.css">
+</head>
+<body>
+  <header>
+    <h1><i>LH Store</i></h1>
+  </header>
+
+  <main id="half">
+    <div class="text-container">
+      <p id="welcome-text" class="english" aria-label="Welcome in English"></p>
+      <p id="welcome" class="arabic" dir="rtl" aria-label="Welcome in Arabic"></p>
+    </div>
+    <form class="login-form" onsubmit="Log_In(event)" action=" ">
+      <label for="email" class="visually-hidden">Email:</label>
+      <input id="email" type="email" placeholder="Email" required autocomplete="email">
+      <label for="password" class="visually-hidden">Password:</label>
+      <input id="password" type="password" placeholder="Password" required autocomplete="current-password">
+      <div class="sign-button"><a href="page1.html"> <button type="submit">Sing In</button> </a></div>
+
+      <p id="Log">Sign In or </p>
+      <div class="creat-button"><a href=""><button>creat accont</button></a></div>
+    </form>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+      <div class="social-icons">
+      <a href="https://facebook.com/yourpage" target="_blank" title="visit out facebook page"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://t.me/yourchannel" target="_blank" title="visit our youtube page"><i class="fab fa-telegram-plane"></i></a>
+      <a href="https://github.com/yourusername" target="_blank" title="visit our youtube page"><i class="fab fa-github"></i></a>
+      <a href="https://youtube.com/yourchannel" target="_blank" title="visit our youtube page"><i class="fab fa-youtube"></i></a>
+    </div>
+
+  </main>
+
+  <script src="store.js"></script>
+</body>
+</html>
