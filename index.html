@@ -13,27 +13,29 @@
   </header>
   
   <button id="lang-toggle" class="lang-toggle">العربية</button>
-
-  <main id="half">
+<main id="half">
     <div class="text-container">
       <p id="welcome-text" class="english" aria-label="Welcome"></p>
       <p id="welcome-ar" class="arabic" dir="rtl" aria-label="Welcome in Arabic"></p>
     </div>
-    <form id="loginForm" class="login-form" onsubmit="Log_In(event)">
-      <label for="email" class="visually-hidden">Email:</label>
-      <input id="email" type="email" placeholder="Email" required autocomplete="email">
-      <label for="password" class="visually-hidden">Password:</label>
-      <input id="password" type="password" placeholder="Password" required autocomplete="current-password">
-      <div class="sign-button">
-        <button type="submit" id="submit-btn">Sign In</button>
-      </div>
-      <p id="login-message" style="color: red;"></p>
+
+  <form id="loginForm" class="login-form" onsubmit="Log_In(event)">
+    <label for="email" class="visually-hidden">Email:</label>
+    <input id="email" type="email" placeholder="Email" required autocomplete="email">
+
+    <label for="password" class="visually-hidden">Password:</label>
+    <input id="password" type="password" placeholder="Password" required autocomplete="current-password">
+
+    <button type="submit" id="submit-btn" class="main-button">Sign In</button>
+
+    <p id="login-message" style="color: red;"></p>
     </form>
 
     <form class="creat-form" style="margin-top: 0;">
-      <p id="sign-or">Sign In or</p>
-      <div class="creat-button"><a href="creat.html" id="create-link" class="creat-button">Create Account</a></div>
-    </form>
+    <p id="sign-or">Sign In or</p>
+    <a href="creat.html" id="create-link" class="main-button">Create Account</a>
+  </form>
+
     
     <div class="social-icons">
       <a href="https://www.facebook.com/profile.php?id=61576798211513" target="_blank" title="Visit our facebook page"><i class="fab fa-facebook-f"></i></a>
