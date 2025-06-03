@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title id="title">Create Account</title>
+  <link rel="stylesheet" href="creat.css"> 
+</head>
+<body>
+
+  <div class="form-container">
+    <button id="lang-toggle" class="lang-toggle">العربية</button>
+
+    <h2 id="form-title">Create Account</h2>
+    <form id="createForm">
+        <label for="firstName" id="label-firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName" id="label-lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <div id="gender-container">
+          <label id="label-gender">Gender:</label>
+          <input type="radio" id="male" name="gender" value="male" required>
+          <label for="male" id="label-male">Male</label>
+          <input type="radio" id="female" name="gender" value="female">
+          <label for="female" id="label-female">Female</label>
+        </div>
+
+        <label for="email" id="label-email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password" id="label-password">Password</label>        
+        <input type="password" id="password" name="password" required>
+        <label for="password2" id="label-password2">Retype Password</label>
+        <input type="password" id="password2" name="password2" required>
+        
+        <button type="submit" id="submit-btn">Create Account</button>
+    </form>
+
+    <p id="success-message" style="color: green; text-align: center; margin-top: 10px;"></p>
+  </div>
+
+  <script src="creat.js"></script>
+</body>
+</html>
