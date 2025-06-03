@@ -66,7 +66,7 @@ header h1 {
   padding: 30px 10px;
   width: 100%;
   min-height: 400px;
-  background: url("images/background.png.webp");
+  background: url("/images/baground69.png");
   background-size: 150px;
   background-position: center;
   background-repeat: repeat;
@@ -142,45 +142,28 @@ input[type="email"]:focus, input[type="password"]:focus {
   border: 1.5px solid #00cfcf;
 }
 
-button {
-  color: #fff;
-  background-color: #00b686;
-  border-radius: 7px;
-  font-size: 1.1rem;
-  align-items: center;
-  padding: 8px 20px;
-  border: none;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
-
-.sign-button a :hover{
-  background-color:red;
-
-}
-
-.creat-button {
+.main-button {
   display: inline-block;
-  color: #ffffff;
-  width: 100%; 
-  max-width: 340px; 
-  height: auto;
-  padding: 6px 20px;
-  border-radius: 7px;
+  width: 100%;
+  max-width: 340px;
+  padding: 10px 100px;
+  border-radius: 20px;
   background-color: #00b686;
+  color: #ffffff;
   text-align: center;
   font-size: 1rem;
   box-sizing: border-box;
-  transition: background-color 0.3s, color 0.3s;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 10px 0;
 }
 
-.creat-button:hover {
-  background-color: red;
-  color: #fff;
+.main-button:hover {
+  background-color: #de5308;
+  
 }
-
 
 #Log {
   margin-top: 15px;
@@ -245,10 +228,22 @@ img, video {
   padding: 8px 16px;
   font-size: 16px;
   cursor: pointer;
-  background-color: #1f0577db;
-  color: white;
+  background-color: rgba(19, 241, 200, 0.695);
+  color: #000000;
   border: none;
-  border-radius: 4px;
+  border-radius: 15px;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+.lang-toggle:hover {
+  background-color: #de5308;
+  color: #fff;
+}
+.lang-toggle:active {
+  background-color: #c54a07;
+  color: #fff;
+}
+
 
 
