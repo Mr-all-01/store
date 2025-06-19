@@ -6,7 +6,6 @@ const LETTER_DELAY = 90;
 
 let isArabic = false;
 
-// Animate welcome text
 function animateText(targetId, text, isArabicLang = false) {
   const container = document.getElementById(targetId);
   container.innerHTML = '';
@@ -38,7 +37,6 @@ function animateText(targetId, text, isArabicLang = false) {
 animateText("welcome-text", TEXT_EN, false);
 animateText("welcome-ar", TEXT_AR, true);
 
-//update language en and arb
 function updateLanguage() {
   if (isArabic) {
     document.documentElement.lang = "ar";
@@ -51,6 +49,9 @@ function updateLanguage() {
     document.getElementById("submit-btn").textContent = "تسجيل الدخول";
     document.getElementById("sign-or").textContent = "أو";
     document.getElementById("create-link").textContent = "إنشاء حساب";
+    document.getElementById("about_us").textContent = "من نحن";
+    document.getElementById("home").textContent = "الصفحة الرئسية";
+    document.getElementById("profile-link").innerHTML = `<i class="fas fa-user"></i> الملف الشخصي`;
   } else {
     document.documentElement.lang = "en";
     document.body.dir = "ltr";
@@ -62,6 +63,9 @@ function updateLanguage() {
     document.getElementById("submit-btn").textContent = "Sign In";
     document.getElementById("sign-or").textContent = "or";
     document.getElementById("create-link").textContent = "Create Account";
+    document.getElementById("about_us").textContent = "about us";
+    document.getElementById("home").textContent = "home";
+    document.getElementById("profile-link").innerHTML = `<i class="fas fa-user"></i> Profile`;
   }
 }
 
@@ -92,19 +96,18 @@ const beam = document.getElementById('beam');
 let passwordVisible = false;
 
 function updateEyeIcon() {
-  // Sync the icon with the state
   if (passwordVisible) {
-    toggle.classList.remove('closed'); // Show "eye" (open)
+    toggle.classList.remove('closed');
     passwordInput.type = "text";
   } else {
-    toggle.classList.add('closed');    // Show "eye-slash" (closed)
+    toggle.classList.add('closed');
     passwordInput.type = "password";
   }
 }
 
 function animateBeam() {
   beam.classList.remove('animate');
-  void beam.offsetWidth; // Force reflow for animation restart
+  void beam.offsetWidth;
   beam.classList.add('animate');
   setTimeout(() => {
     beam.classList.remove('animate');
@@ -116,7 +119,6 @@ toggle.addEventListener('click', () => {
   updateEyeIcon();
   animateBeam();
 });
-
 toggle.addEventListener('keydown', (e) => {
   if (e.key === ' ' || e.key === 'Enter') {
     e.preventDefault();
@@ -125,26 +127,98 @@ toggle.addEventListener('keydown', (e) => {
     animateBeam();
   }
 });
-
-
 updateEyeIcon();
 
-function updateEyeRTL() {
+function updateEyeRTL() {}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const socialToggle = document.querySelector('.social-toggle');
+  if (socialToggle) {
+    socialToggle.addEventListener('click', function (e) {
+      if (e.target.tagName.toLowerCase() !== "a") {
+        socialToggle.classList.toggle('active');
+      }
+    });
+    document.addEventListener('click', function (e) {
+      if (!socialToggle.contains(e.target)) {
+        socialToggle.classList.remove('active');
+      }
+    });
+    socialToggle.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        socialToggle.classList.toggle('active');
+      }
+    });
+  }
+});
+
+// Responsive Navbar Toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const navbarToggle = document.getElementById("navbar-toggle");
+  const navbarMenu = document.getElementById("navbar-menu");
+  const navbarClose = document.getElementById("navbar-close");
+  const navbarOverlay = document.getElementById("navbar-overlay");
   
-}
+  function toggleMenu() {
+    const isOpen = navbarMenu.classList.toggle("open");
+    navbarToggle.classList.toggle("open");
+    navbarOverlay.classList.toggle("active");
+    document.body.classList.toggle("menu-active");
+    navbarToggle.setAttribute("aria-expanded", isOpen);
+    navbarOverlay.setAttribute("aria-hidden", !isOpen);
+    
+    
+    if (isOpen) {
+      setTimeout(() => {
+        const firstFocusable = navbarMenu.querySelector('a, button:not(.navbar-close), [tabindex="0"]');
+        firstFocusable?.focus();
+      }, 100);
+    } else {
+      navbarToggle.focus();
+    }
+  }
 
-// Social media icon toggle (mobile)
-const socialToggle = document.querySelector('.social-toggle');
-let isTouch = false;
+  function closeMenu() {
+    navbarMenu.classList.remove("open");
+    navbarToggle.classList.remove("open");
+    navbarOverlay.classList.remove("active");
+    document.body.classList.remove("menu-active");
+    navbarToggle.setAttribute("aria-expanded", "false");
+    navbarOverlay.setAttribute("aria-hidden", "true");
+    navbarToggle.focus();
+  }
 
-if (socialToggle) {
-  socialToggle.addEventListener('touchstart', () => {
-    socialToggle.classList.add('active');
-    isTouch = true;
+  // Event listeners
+  navbarToggle.addEventListener("click", toggleMenu);
+  navbarClose?.addEventListener("click", closeMenu);
+  navbarOverlay?.addEventListener("click", closeMenu);
+
+  // Close menu when clicking on regular links (not toggles)
+  navbarMenu?.querySelectorAll('a:not(.social-toggle), button:not(.navbar-close):not(#darkModeToggle):not(#lang-toggle)').forEach(el => {
+    el.addEventListener('click', closeMenu);
   });
-  socialToggle.addEventListener('touchend', () => {
-    setTimeout(() => {
-      socialToggle.classList.remove('active');
-    }, 900);
+
+  // ESC key to close
+  document.addEventListener('keydown', (e) => {
+    if (e.key === "Escape" && navbarMenu.classList.contains("open")) {
+      closeMenu();
+    }
   });
-}
+});
+
+// dark-mode
+const dark = document.getElementById('darkModeToggle');
+dark.addEventListener('click', function(e) {
+  // Prevent this click from closing the menu
+  e.stopPropagation();
+  e.stopImmediatePropagation();
+  
+  // Toggle dark mode
+  document.body.classList.toggle('dark-mode');
+  dark.textContent = document.body.classList.contains('dark-mode') ? "☀️" : "🌕";
+  
+  // Force browser to recalculate layouts
+  void document.body.offsetHeight;
+});
+
