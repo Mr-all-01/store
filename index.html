@@ -11,6 +11,44 @@
   <header>
     <h1><i id="header-title">LH Store</i></h1>
   </header>
+    <nav class="navbar">
+  <button class="navbar-toggle" id="navbar-toggle" aria-label="Menu">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+  
+  <div class="navbar-overlay" id="navbar-overlay"></div>
+  
+  <ul class="navbar-menu" id="navbar-menu">
+    <li class="navbar-close-container">
+      <button class="navbar-close" id="navbar-close" aria-label="Close menu">
+        <i class="fas fa-times"></i>
+      </button>
+    </li>
+        <li class="social">
+          <div class="social-toggle" tabindex="0">
+            <span class="icon"><i class="fas fa-share-alt"></i></span>
+            <div class="social-icons" id="social-icons">
+              <a  href="https://www.facebook.com/profile.php?id=61576798211513" target="_blank" title="Visit our facebook page"><i class="fab fa-facebook-f"></i></a>
+              <a  href="https://t.me/LH_Store_Telegram" target="_blank" title="Visit our telegram page"><i class="fab fa-telegram-plane"></i></a>
+              <a  href="https://www.youtube.com/@LHS_Store" target="_blank" title="Visit our youtube page"><i class="fab fa-youtube"></i></a>
+              <a  href="mailto:lh.store.email@gmail.com" target="_blank" title="Get our email"><i class="fas fa-envelope"></i></a>
+              <a  href="https://wa.me/213697045805?src=qr" target="_blank" title="our WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </li>
+        <li class="home"><a href="#" id="home">Home</a></li>
+        <li>
+          <button id="lang-toggle" type="button">العربية</button>
+        </li>
+        <li class="about_us"><a href="about_us.html" id="about_us">About Us</a></li>
+        <li><a href="profile.html" id="profile-link"><i class="fas fa-user"></i> Profile</a></li>
+        <li><button id="darkModeToggle">🌕</button></li>
+      </ul>
+    </nav>
+  
+
   <main id="half">
     <div class="text-container">
       <p id="welcome-text" class="english" aria-label="Welcome"></p>
@@ -31,26 +69,11 @@
       <button type="submit" id="submit-btn" class="main-button">Sign In</button>
       <p id="login-message" style="color: red; font-size: 16px;"></p>
     </form>
-    <form class="creat-form" style="margin-top: 0;">
+    <form class="creat-form" style="margin-top: 10px; text-align: center;">
       <p id="sign-or">Sign In or</p>
       <a href="creat.html" id="create-link" class="main-button">Create Account</a>
     </form>
   </main>
-  <div class="bottom-bar">
-    
-    <div class="social-toggle" tabindex="0">
-      <span class="main-icon"><i class="fas fa-share-alt"></i></span>
-      <div class="social-icons">
-        <a href="https://www.facebook.com/profile.php?id=61576798211513" target="_blank" title="Visit our facebook page"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://t.me/LH_Store_Telegram" target="_blank" title="Visit our telegram page"><i class="fab fa-telegram-plane"></i></a>
-        <a href="https://www.youtube.com/@LHS_Store" target="_blank" title="Visit our youtube page"><i class="fab fa-youtube"></i></a>
-        <a href="mailto:lh.store.email@gmail.com" target="_blank" title="Get our email"><i class="fas fa-envelope"></i></a>
-        <a href="https://wa.me/213697045805?src=qr" target="_blank" title="our WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      </div>
-    </div>
-    
-    <button id="lang-toggle" class="lang-toggle">العربية</button>
-  </div>
-  <script src="index.js"></script>
+  <script src="index.js" defer></script>
 </body>
 </html>
