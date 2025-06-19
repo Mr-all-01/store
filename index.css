@@ -581,7 +581,7 @@ body.dark-mode #darkModeToggle:focus {
   right: 48px;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(161, 167, 179, 0.769);
+  background:#00b686;
   box-shadow: 0 2px 16px #0001;
   border-radius: 1.5em;
   padding: 0.8em 01em;
@@ -594,9 +594,20 @@ body.dark-mode #darkModeToggle:focus {
   pointer-events: auto;
 }
 
-#social-icons {
-  background-color: #00b686;
+#social-icons a:hover,#social-icons a:focus {
+ background: #b60300;  
+  color:#ffff;    
+  
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
 }
+
 
 @media (max-width: 600px) {
   header {
@@ -624,17 +635,5 @@ body.dark-mode #darkModeToggle:focus {
     z-index: 999;
   
   }
-  #social-icons a:hover,#social-icons a:focus {
- background: #b60300;  
-  color: #fff;    
-  position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 999;
-}
+ 
 }
