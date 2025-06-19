@@ -34,7 +34,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background: rgba(0, 0, 0, 0.5);
-  background-image: url("/images/background.png.webp") !important;
+  background-image: url("/images/background.png.webp") ;
   background-repeat: repeat;
   background-position: center;
   background-size: 8pc;
