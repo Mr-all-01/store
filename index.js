@@ -52,6 +52,7 @@ function updateLanguage() {
     document.getElementById("about_us").textContent = "من نحن";
     document.getElementById("home").textContent = "الصفحة الرئسية";
     document.getElementById("profile-link").innerHTML = `<i class="fas fa-user"></i> الملف الشخصي`;
+  
   } else {
     document.documentElement.lang = "en";
     document.body.dir = "ltr";
@@ -75,7 +76,7 @@ function Log_In(event) {
   const password = document.getElementById("password").value;
   const log = document.getElementById("login-message");
   if (email === "hamadi@gmail.com" && password === "12345") {
-    window.location.href = "page.html";
+    window.location.href = "home.html";
   } else {
     log.textContent = isArabic ? "حاول مرة أخرى من فضلك" : "Try again please";
   }
@@ -153,7 +154,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-// Responsive Navbar Toggle
+// Navbar Toggle
+
 document.addEventListener("DOMContentLoaded", () => {
   const navbarToggle = document.getElementById("navbar-toggle");
   const navbarMenu = document.getElementById("navbar-menu");
@@ -194,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
   navbarClose?.addEventListener("click", closeMenu);
   navbarOverlay?.addEventListener("click", closeMenu);
 
-  // Close menu when clicking on regular links (not toggles)
+  // Close menu when clicking on regular links 
   navbarMenu?.querySelectorAll('a:not(.social-toggle), button:not(.navbar-close):not(#darkModeToggle):not(#lang-toggle)').forEach(el => {
     el.addEventListener('click', closeMenu);
   });
@@ -205,12 +207,22 @@ document.addEventListener("DOMContentLoaded", () => {
       closeMenu();
     }
   });
+
+  document.addEventListener('click', function(e) {
+    if (
+      navbarMenu.classList.contains('open') && 
+      !navbarMenu.contains(e.target) &&        
+      e.target !== navbarToggle &&             
+      e.target !== navbarOverlay    
+    ) {
+      closeMenu();
+    }
+  });
 });
 
 // dark-mode
 const dark = document.getElementById('darkModeToggle');
 dark.addEventListener('click', function(e) {
-  // Prevent this click from closing the menu
   e.stopPropagation();
   e.stopImmediatePropagation();
   
